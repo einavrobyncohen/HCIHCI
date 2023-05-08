@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: gotham-regular;
+    src: url(/assests/fonts/GothamMedium.ttf);
+}
+
+@font-face {
+    font-family: gotham-light;
+    src: url(/assests/fonts/GothamLight.ttf);
+    padding: 0;
+}
+
+html {
+    line-height: 1;
+}
+
+body {
+    margin: 0;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 2rem;
+    max-height: 100%;
+}
+
+/* step section */
+
+.step-title {
+    font-family: gotham-regular;
+    font-size: 30px;
+    color: #373ba0;
+}
+
+.step-description {
+    font-family: gotham-light;
+    color: #373ba0;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+/* option switch */
+
+.switch-button {
+    margin-top: 30px;
+    width: 190px;
+    height: 40px;
+    text-align: center;
+    position: absolute;
+    will-change: transform;
+    cursor: pointer;
+    transition: .3s ease all;
+    border: 1px solid #373ba0;
+    background: #ffffff;
+    border-radius: 50px;
+    
+}
+.switch-button-case {
+    display: inline-block;
+    background: none;
+    width: 45%;
+    height: 100%;
+    color:  #373ba0;
+    position: relative;
+    border: none;
+    transition: .2s ease all;
+    padding-bottom: 1px;
+    padding-top: 8px;
+    font-size: 15px;
+    font-family: gotham-light;
+}
+.switch-button-case:hover {
+    cursor: pointer;
+}
+.switch-button-case:focus {
+    outline: none;
+}
+.switch-button .active {
+    color: #fff;
+    background-color: #373ba0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    transition: .3s ease-out all;
+    border-radius: 50px;
+}
+.switch-button .active-case {
+    color: #fff;
+}
+
+/* DATA INPUT */
+
+.data-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* drag and drop */
+
+.text-input textarea{
+    border: 1.5px dashed rgb(124, 143, 216);
+    height: 300px;
+    width: 500px;
+    border-radius: 30px;
+    padding: 15px;
+    resize: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+.text-input textarea::placeholder{
+    color:rgb(150, 151, 152);
+    font-style: italic;
+}
+
+textarea:focus {
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-apperarance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: none;    
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+
+.data-input .drag-area {
+    border: 1.5px dashed rgb(124, 143, 216);
+    height: 300px;
+    width: 500px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.drag-area.active {
+    border: 1.5px solid rgb(124, 143, 216);
+}
+
+.drag-area.success, textarea.success {
+    border: 1.5px dashed #3ACB50;
+}
+
+.drag-area .icon-cloud {
+    font-size: 50px;
+    color: #a3adcd;
+}
+
+.drag-area header {
+    font-family: gotham-regular;
+    color: #373ba0;
+}
+
+.drag-area span {
+    font-family: gotham-light;
+    color: #373ba0;
+    margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+    font-family: gotham-regular;
+    padding: 10px 25px;
+    border: 1px solid #373ba0;
+    outline: none;
+    background: white;
+    color: #373ba0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* start analysis button */
+
+.button-wrapper {
+    margin-top: 30px;
+}
+
+.button-wrapper button {
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 35px;
+    padding-top: 27px;
+    padding-bottom: 17px;
+    font-size: 15px;
+    font-family: gotham-regular;
+    background-color: #3ACB50;
+    color: white;
+    cursor: pointer;
+}
+
+.button-wrapper button[disabled=disabled], button:disabled {
+    color: #656565;
+    background-color: #efefef;
+    cursor: not-allowed;
+}
+
+.upload-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.upload-success img {
+    margin-bottom: 20px;
+    max-width: 170px;
+}
+
+.upload-success .success-text {
+    color: #373ba0;
+    font-family: gotham-light;
+    font-size: 15px;
+    max-width: 214px;
+    text-align: center;
+    line-height: 1.2;
+}

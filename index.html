@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Anazlyzer HCI</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/contract_view.css">
+    <link rel="stylesheet" href="styles/contract_actions.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    
+    <script src="https://kit.fontawesome.com/5dcecc602a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <header class="step-indicator">
+        <h2 class="step-title">Step 1: Contract Input Options</h2>
+        <p class="step-description">Submit the contract for analysis by importing it using drag and drop,
+            by file upload, or by copying and pasting the contract's content into the text entry box.</p>
+    </header>
+
+    <!-- <header class="step-indicator">
+        <h2 class="step-title">Step 3: Your Analyzed Contract is Ready!</h2>
+        <p class="step-description third">
+            Legal clauses in <span>red</span> indicate problematic legal clauses. <br>
+            Legal clauses in <span>orange</span> indicted moderately problematic legal clauses. <br>
+            Legal clauses in <span>green</span> indicate unproblematic legal clauses.</p>
+    </header> -->
+
+    <div class="switch-button">
+        <span class="active"></span>
+        <button class="switch-button-case left active-case">upload</button>
+        <button class="switch-button-case right">text input</button>
+    </div>
+
+    <section class="data-input">
+        <div class="drag-area">
+            <div class="icon-cloud">
+                <i class="fa fa-cloud-upload"></i>
+            </div>
+            <header>Drag&Drop the contract</header>
+            <span>or</span>
+            <button class="browse-files">Browse files</button>
+            <input type="file" hidden>
+            <span>must be a .pdf file</span>
+        </div>
+
+        <div class="text-input" style="display: none;">
+            <textarea class="textbox" placeholder="Paste the entire content of the contract here..."></textarea>
+        </div>
+
+        <div class="button-wrapper">
+            <button disabled onclick="toAnalyzeContract()">Start Analysis</button>
+        </div>
+    </section>
+    
+
+    <section class="contract-analyzer-page" style="display: none;">
+
+        <div class="contrant-actions-wrapper">
+
+            <div class="contract-actions">
+                <button class="share-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span>Share</span>
+                </button>
+                <button class="translate-btn">
+                    <i class="fa-solid fa-language"></i>
+                    <span>Translate</span>
+                </button>
+                <button class="download-btn">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <span>Download</span>
+                </button>
+            </div>
+
+            <section class="contract-analyzer-section">
+                <div class="top-bar">
+                    <div class="bar-actions-wrapper">
+                        <button class="btn" id="prev-page" onclick="showPrevPage()">
+                            <i class="fas fa-arrow-circle-left"></i>
+                        </button>
+                        <span class="seperator">|</span>
+                        <span class="page-info">
+                             <span id="page-num"></span> / <span id="page-count"></span>
+                        </span>
+                        <span class="seperator">|</span>
+                        <button class="zoom-out" id="out" onclick="minimzeView()">
+                            -
+                        </button>
+                        <button class="zoom-in" id="in" onclick="enlargeView()">
+                            +
+                        </button>
+                        <span class="seperator">|</span>
+                        <button class="btn" id="next-page" onclick="showNextPage()">
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <section class="contract-viewer">
+                    <canvas id="pdf-render"></canvas>
+                </section>
+            </section>
+
+        </div>
+
+        <div class="email-interface">
+            <header>
+                <div class="close-email" onclick="closeEmail()"><i class="uil uil-times"></i></div>
+            </header>
+
+            <form>
+                <div class="fields">
+                    <div class="field-wrapper">
+                        <label for="from">From*</label>
+                        <input type="email" id="from" name="from" required placeholder="Your email address goes here">
+                    </div>
+
+                    <div class="field-wrapper">
+                        <label for="to">To*</label>
+                        <input type="email" id="to" name="to" required placeholder="Receipient email address goes here">
+                    </div>
+
+                    <div class="field-wrapper">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                </div>
+
+                <textarea id="message" name="message"></textarea>
+                <div class="pdf-icon">
+                    <img src="assests/imgs/pdf.png"/>
+                    <span>Contract.pdf</span>
+                </div>
+                <div class="send-wrapper">
+                    <span>*Mandatory fields</span>
+                    <input type="button" value="Send" id="sendBtn" disabled>
+                </div>
+            </form>
+        </div>
+
+        <div class="popup">
+            <header>
+                <span>Share contract via</span>
+                <div class="close"><i class="uil uil-times"></i></div>
+            </header>
+            <div class="content">
+                <ul class="icons">
+                    <div class="icon-wrapper" id="email" onclick="openEmail()">
+                        <a href="#"><i class="fa-sharp fa-regular fa-envelope"></i></a>
+                        <span>email</span>
+                    </div>
+                    <div class="icon-wrapper">
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <span>whatsapp</span>
+                    </div>
+                    <div class="icon-wrapper">
+                        <a href="#"><i class="fa brands fa-dropbox"></i></a>
+                        <span>dropbox</span>
+                    </div>
+                    <div class="icon-wrapper">
+                        <a href="#"><i class="fa-sharp fa-solid fa-print"></i></a>
+                        <span>print</span>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </section>   
+
+    <script src="pages/input_page.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="pages/contract_view.js"></script>
+    <script src="pages/contract_actions.js"></script>
+</body>
+</html>
