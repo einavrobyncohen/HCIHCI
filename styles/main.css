@@ -6,12 +6,12 @@
 
 @font-face {
     font-family: gotham-regular;
-    src: url('/assests/fonts/GothamMedium.ttf');
+    src: url('./assests/fonts/GothamMedium.ttf');
 }
 
 @font-face {
     font-family: gotham-light;
-    src: url('/assests/fonts/GothamLight.ttf');
+    src: url('./assests/fonts/GothamLight.ttf');
     padding: 0;
 }
 
