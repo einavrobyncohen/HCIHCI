@@ -3,7 +3,7 @@
 }
 
 .step-description.third span {
-  font-family: gotham-regular;
+  font-family: 'gotham-regular';
 }
 
 .step-description.third span:first-of-type {
@@ -55,7 +55,7 @@
 }
 
 .contract-actions span {
-    font-family: gotham-regular;
+    font-family: 'gotham-regular';
     color: #373ba0;
     font-size: 12px;
     margin-top: 15px;

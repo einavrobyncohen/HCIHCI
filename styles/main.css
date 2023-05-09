@@ -5,13 +5,13 @@
 }
 
 @font-face {
-    font-family: gotham-regular;
-    src: url('./FONTS/GothamMedium.ttf') format('truetype');
+    font-family: 'gotham-regular';
+    src: url('/FONTS/GothamMedium.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: gotham-light;
-    src: url('./FONTS/GothamLight.ttf') format('truetype');
+    font-family: 'gotham-light';
+    src: url('/FONTS/GothamLight.ttf') format('truetype');
     padding: 0;
 }
 
@@ -30,13 +30,13 @@ body {
 /* step section */
 
 .step-title {
-    font-family: gotham-regular;
+    font-family: 'gotham-regular';
     font-size: 30px;
     color: #373ba0;
 }
 
 .step-description {
-    font-family: gotham-light;
+    font-family: 'gotham-light';
     color: #373ba0;
     margin-top: 20px;
     font-size: 16px;
@@ -71,7 +71,7 @@ body {
     padding-bottom: 1px;
     padding-top: 8px;
     font-size: 15px;
-    font-family: gotham-light;
+    font-family: 'gotham-light';
 }
 .switch-button-case:hover {
     cursor: pointer;
@@ -163,18 +163,18 @@ textarea:focus {
 }
 
 .drag-area header {
-    font-family: gotham-regular;
+    font-family: 'gotham-regular';
     color: #373ba0;
 }
 
 .drag-area span {
-    font-family: gotham-light;
+    font-family: 'gotham-light';
     color: #373ba0;
     margin: 10px 0 15px 0;
 }
 
 .drag-area button {
-    font-family: gotham-regular;
+    font-family: 'gotham-regular';
     padding: 10px 25px;
     border: 1px solid #373ba0;
     outline: none;
@@ -198,7 +198,7 @@ textarea:focus {
     padding-top: 27px;
     padding-bottom: 17px;
     font-size: 15px;
-    font-family: gotham-regular;
+    font-family: 'gotham-regular';
     background-color: #3ACB50;
     color: white;
     cursor: pointer;
@@ -224,7 +224,7 @@ textarea:focus {
 
 .upload-success .success-text {
     color: #373ba0;
-    font-family: gotham-light;
+    font-family: 'gotham-light';
     font-size: 15px;
     max-width: 214px;
     text-align: center;
