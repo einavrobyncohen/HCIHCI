@@ -60,7 +60,6 @@ body {
     border: none;
     transition: .2s ease all;
     padding-bottom: 1px;
-    padding-top: 8px;
     font-size: 15px;
     font-family: Figtree;
     font-weight: 300;
@@ -187,8 +186,7 @@ textarea:focus {
     outline: none;
     border: none;
     border-radius: 25px;
-    padding: 12px 35px;
-    padding-top: 27px;
+    padding: 15px 51px;
     padding-bottom: 17px;
     font-size: 15px;
     font-family: Figtree;
