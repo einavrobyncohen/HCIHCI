@@ -99,7 +99,7 @@ body {
 /* drag and drop */
 
 .text-input textarea{
-    border: 1.5px dashed rgb(124, 143, 216);
+    border: 5px dashed #A5B9DA;
     height: 300px;
     width: 500px;
     border-radius: 30px;
@@ -130,7 +130,7 @@ textarea:focus {
 }
 
 .data-input .drag-area {
-    border: 1.5px dashed rgb(124, 143, 216);
+    border: 5px dashed #A5B9DA;
     height: 300px;
     width: 500px;
     border-radius: 30px;
@@ -145,12 +145,11 @@ textarea:focus {
 }
 
 .drag-area.success, textarea.success {
-    border: 1.5px dashed #3ACB50;
+    border: 5px dashed #3ACB50;
 }
 
-.drag-area .icon-cloud {
-    font-size: 50px;
-    color: #a3adcd;
+.icon-cloud img {
+    height: 3.5rem;
 }
 
 .drag-area header {
@@ -162,18 +161,23 @@ textarea:focus {
     font-family: Figtree;
     font-weight: 300;
     color: #373ba0;
-    margin: 10px 0 15px 0;
+    margin: 9px 0 6px 0;
 }
 
 .drag-area button {
     font-family: Figtree;
-    padding: 10px 25px;
-    border: 1px solid #373ba0;
+    font-weight: 300;
+    padding: 9px 22px;
+    border: 1px solid #7886AF;
     outline: none;
     background: white;
     color: #373ba0;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+}
+
+.drag-area .must{
+    color: #535282;
 }
 
 /* start analysis button */
