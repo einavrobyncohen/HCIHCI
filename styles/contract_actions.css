@@ -13,7 +13,7 @@
     visibility: visible;
 }
 
-.popup {
+.popup-share, .popup-translate {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.6);
@@ -33,7 +33,7 @@
                 transform 0.2s 0s ease-in-out;
 }
 
-.popup.show {
+.popup-share.show, .popup-translate.show{
     top: 50%;
     opacity: 1;
     pointer-events: auto;
@@ -43,19 +43,19 @@
                 transform 0.2s 0s ease-in-out;
 }
 
-.popup :is(header, .icons) {
+.popup-share :is(header, .icons), .popup-translate :is(header, .icons) {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.popup header {
+.popup-share header, .popup-translate header {
     padding-bottom: 15px;
     border-bottom: 1px solid #ebedf9;
     font-family: Figtree;
 }
 
-.popup header span {
+.popup-share header span {
     font-size: 19px;
 }
 
@@ -77,7 +77,7 @@ header i {
     display: flex;
 }
 
-.popup .content {
+.popup-share .content {
     margin: 20px 0;
 }
 
@@ -115,10 +115,32 @@ header i {
     align-items: center;
 }
 
-.icon-wrapper span {
+.popup-share .icon-wrapper span {
     font-size: 12px;
 }
 
+.popup-translate .icons {
+    margin-top: 1.9rem;
+}
+
+.popup-translate .icon-wrapper img {
+    width: 2.5rem;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.popup-translate .icon-wrapper img:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.2);
+}
+
+
+.popup-translate .icon-wrapper span {
+    margin-top: 10px;
+    font-size: 10px;
+}
 
 
 /* email-interface */

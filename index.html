@@ -42,7 +42,7 @@
     <section class="data-input">
         <div class="drag-area">
             <div class="icon-cloud">
-                <img src="/assests/imgs/draganddrop.png"/>
+                <img src="assests/imgs/draganddrop.png"/>
             </div>
             <header>Drag&Drop the contract</header>
             <span>or</span>
@@ -73,10 +73,12 @@
                     <i class="fa-solid fa-language"></i>
                     <span>Translate</span>
                 </button>
-                <button class="download-btn">
-                    <i class="fa-solid fa-file-arrow-down"></i>
-                    <span>Download</span>
-                </button>
+                <a href="contract.pdf" download> 
+                    <button class="download-btn">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        <span>Download</span>
+                    </button>
+                </a>
             </div>
 
             <section class="contract-analyzer-section">
@@ -146,7 +148,7 @@
             </form>
         </div>
 
-        <div class="popup">
+        <div class="popup-share">
             <header>
                 <span>Share contract via</span>
                 <div class="close"><i class="uil uil-times"></i></div>
@@ -170,6 +172,38 @@
                         <span>print</span>
                     </div>
                 </ul>
+            </div>
+        </div>
+
+        <div class="popup-translate">
+            <header>
+                <span>Choose Language</span>
+                <div class="close"><i class="uil uil-times"></i></div>
+            </header>
+            <div class="content">
+                <ul class="icons">
+                    <div class="icon-wrapper" id="dutch">
+                        <img src="assests/imgs/flags/netherlands.png"/>
+                        <span>Nederlands</span>
+                    </div>
+                    <div class="icon-wrapper" id="german">
+                        <img src="assests/imgs/flags/germany.png"/>
+                        <span>Deutsch</span>
+                    </div>
+                    <div class="icon-wrapper" id="japan">
+                        <img src="assests/imgs/flags/japan.png"/>
+                        <span>日本</span>
+                    </div>
+                    <div class="icon-wrapper" id="france">
+                        <img src="assests/imgs/flags/france.png"/>
+                        <span>français</span>
+                    </div>
+                    <div class="icon-wrapper" id="israel">
+                        <img src="assests/imgs/flags/israel.png"/>
+                        <span>עברית</span>
+                     </div>
+                </ul>
+                <a id="link" href="translated-contract.pdf" download hidden></a>
             </div>
         </div>
     </section>   

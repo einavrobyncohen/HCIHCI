@@ -1,15 +1,27 @@
 'use strict'
 
+const overlay = document.querySelector(".overlay");
+
+//share popup//
 const shareBtn = document.querySelector('.share-btn'),
-    sharePopup = document.querySelector('.popup'),
-    closeSharePopup = sharePopup.querySelector('.close'),
-    overlay = document.querySelector(".overlay"),
-    fromInput = document.getElementById("from"),
+    sharePopup = document.querySelector('.popup-share'),
+    closeSharePopup = sharePopup.querySelector('.close');
+
+//email popup//
+const fromInput = document.getElementById("from"),
     toInput = document.getElementById("to"),
     sendBtn = document.getElementById("sendBtn"),
     emailInterface = document.querySelector(".email-interface"),
     regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
+//translate popup//
+const translateBtn = document.querySelector(".translate-btn"),
+    translatePopup = document.querySelector(".popup-translate"),
+    closeTranslatePopup = translatePopup.querySelector(".close"),
+    translateOptions = translatePopup.querySelectorAll(".icon-wrapper");
+
+
+//**SHARE CONTRACT*/
 
 //clicking on the option to share the contract// 
 
@@ -30,7 +42,6 @@ function openEmail() {
     sharePopup.classList.remove("show");
 }
 
-
 const enableSendBtn = () => {
     if(regEmail.test(fromInput.value) && regEmail.test(toInput.value)) {
         sendBtn.disabled = false;
@@ -38,7 +49,6 @@ const enableSendBtn = () => {
         sendBtn.disabled = true;
     }
 }
-
 
 function closeEmail() {
     emailInterface.classList.remove("show");
@@ -50,4 +60,32 @@ function closeEmail() {
 
 fromInput.addEventListener("input", enableSendBtn);
 toInput.addEventListener("input", enableSendBtn);
-sendBtn.addEventListener("click", closeEmail)
+sendBtn.addEventListener("click", closeEmail);
+
+
+//**TRANSLATE CONTRACT*/
+
+translateBtn.onclick = () => {
+    translatePopup.classList.toggle("show");
+    overlay.classList.toggle("show");
+    translateBtn.querySelector("i").classList.toggle("selected");
+}
+
+closeTranslatePopup.onclick = () => {
+    translateBtn.click();
+}
+
+translateOptions.forEach(function(option) {
+    option.addEventListener("click", function() {
+        translatePopup.querySelector("a").click();
+        translateBtn.click();
+    })
+})
+
+
+
+
+
+
+
+
