@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500&display=swap" rel="stylesheet">
-    
+
     <script src="https://kit.fontawesome.com/5dcecc602a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -60,8 +60,7 @@
         </div>
     </section>
     
-
-    <section class="contract-analyzer-page" style="display: none;">
+    <section class="contract-analyzer-page"style="display: none;">
 
         <div class="contrant-actions-wrapper">
 
@@ -84,22 +83,24 @@
                 <div class="top-bar">
                     <div class="bar-actions-wrapper">
                         <button class="btn" id="prev-page" onclick="showPrevPage()">
-                            <i class="fas fa-arrow-circle-left"></i>
+                            <i class="fa-solid fa-angle-left"></i>
                         </button>
                         <span class="seperator">|</span>
                         <span class="page-info">
-                             <span id="page-num"></span> / <span id="page-count"></span>
+                             <span class="page-num" id="page-num"></span> / <span class="page-count" id="page-count"></span>
                         </span>
                         <span class="seperator">|</span>
-                        <button class="zoom-out" id="out" onclick="minimzeView()">
-                            -
-                        </button>
-                        <button class="zoom-in" id="in" onclick="enlargeView()">
-                            +
-                        </button>
+                        <div class="zoom-wrapper">
+                            <button class="zoom-out" id="out" onclick="minimzeView()">
+                                <i class="fa-solid fa-circle-minus"></i>
+                            </button>
+                            <button class="zoom-in" id="in" onclick="enlargeView()">
+                                <i class="fa-solid fa-circle-plus"></i>  
+                            </button>
+                        </div>
                         <span class="seperator">|</span>
                         <button class="btn" id="next-page" onclick="showNextPage()">
-                            <i class="fas fa-arrow-circle-right"></i>
+                            <i class="fa-solid fa-angle-right"></i>
                         </button>
                     </div>
                 </div>
