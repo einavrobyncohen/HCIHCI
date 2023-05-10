@@ -118,6 +118,8 @@ function contractInputNoSuccess() {
 function toAnalyzeContract(){
     // starting tracker // 
     clickedOnButton();
+    // intialize contract viewer // 
+    initializeView('./contract.pdf');
     switchButton.style.display = 'none';
     document.querySelector('.data-input').style.display = 'none'; 
     stepIndicator.innerHTML = "<h2 class='step-title'>Step 3: Your Analyzed Contract is Ready!</h2>"+
@@ -125,6 +127,5 @@ function toAnalyzeContract(){
     "Legal clauses in <span>red</span> indicate problematic legal clauses. <br>" +
     "Legal clauses in <span>orange</span> indicted moderately problematic legal clauses. <br>"+
     "Legal clauses in <span>green</span> indicate unproblematic legal clauses.</p>"
-
     conractViewArea.style.display = '';
 }

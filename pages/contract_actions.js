@@ -83,10 +83,11 @@ closeTranslatePopup.onclick = () => {
 
 translateOptions.forEach(function(option) {
     option.addEventListener("click", function() {
-        translatePopup.querySelector("a").click();
         translateBtn.click();
-        // ending tracker for translating task //; 
+        // ending tracker for translating task //
         taskCompleted('translate');
+        // showing translated pdf// 
+        initializeView('./translated-contract.pdf');
     })
 })
 
@@ -96,6 +97,7 @@ downloadBtn.addEventListener("click", function() {
     // ending tracker for downloading task //; 
     taskCompleted('download');
 });
+
 
 
 
