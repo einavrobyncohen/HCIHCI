@@ -21,6 +21,10 @@ const translateBtn = document.querySelector(".translate-btn"),
     translateOptions = translatePopup.querySelectorAll(".icon-wrapper");
 
 
+//download option//
+const downloadBtn = document.getElementById("download");
+
+
 //**SHARE CONTRACT*/
 
 //clicking on the option to share the contract// 
@@ -51,6 +55,8 @@ const enableSendBtn = () => {
 }
 
 function closeEmail() {
+    // end tracker sharing option// 
+    taskCompleted('share');
     emailInterface.classList.remove("show");
     overlay.classList.remove("show");
     shareBtn.querySelector("i").classList.remove("selected");
@@ -79,8 +85,17 @@ translateOptions.forEach(function(option) {
     option.addEventListener("click", function() {
         translatePopup.querySelector("a").click();
         translateBtn.click();
+        // ending tracker for translating task //; 
+        taskCompleted('translate');
     })
 })
+
+//**DOWNLOAD CONTRACT*/
+
+downloadBtn.addEventListener("click", function() {
+    // ending tracker for downloading task //; 
+    taskCompleted('download');
+});
 
 
 

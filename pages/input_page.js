@@ -84,7 +84,6 @@ dropArea.addEventListener("drop", (event) => {
 });
 
 function checkUpload(){
-    console.log('here');
     let contractFileType = contractFile.type
     if(contractFileType === "application/pdf") {
         let fileReader = new FileReader();
@@ -117,6 +116,8 @@ function contractInputNoSuccess() {
 }
 
 function toAnalyzeContract(){
+    // starting tracker // 
+    clickedOnButton();
     switchButton.style.display = 'none';
     document.querySelector('.data-input').style.display = 'none'; 
     stepIndicator.innerHTML = "<h2 class='step-title'>Step 3: Your Analyzed Contract is Ready!</h2>"+
