@@ -53,6 +53,7 @@ function switchToTextInput(){
 }
 
 // FILE UPLOAD // 
+// SOURCE VIDEO USED FOR SOME OF THE IMPLEMENTATION OF THE DRAG AND DROP FEATURE: https://www.youtube.com/watch?v=0HCiH4Tk04I //
 
 filesButton.onclick = () => {
     file_input.click();

@@ -91,3 +91,5 @@ function initializeView(contractPath) {
             document.querySelector('.top-bar').getElementsByClassName.display = 'none';
         });
 }
+
+// SOURCE VIDEO PARTLY USED FOR PDF-RENDER IMPLEMENTATION: https://www.youtube.com/watch?v=ydCSSgwZjzs //
