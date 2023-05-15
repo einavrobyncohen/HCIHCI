@@ -15,7 +15,7 @@ function clickedOnButton() {
 
 function taskCompleted(task) {
     participantData.endTime = new Date();
-    participantData.totalTimeSeconds = participantData.endTime.getSeconds() - participantData.startTime.getSeconds();
+    participantData.totalTimeSeconds = (participantData.endTime - participantData.startTime) / 1000;
     participantData.taskType = task;
     console.log(`participant finished task:${task}`, participantData);
 }
