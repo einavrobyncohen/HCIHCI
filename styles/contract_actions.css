@@ -8,6 +8,7 @@
     background: rgb(0,0,0,0.5);
     visibility: hidden;
     transition: all 0.1s ease;
+    z-index: 33;
 }
 .overlay.show{
     visibility: visible;
@@ -31,6 +32,7 @@
     transition: top 0s 0.2s ease-in-out,
                 opacity 0.2s 0s ease-in-out,
                 transform 0.2s 0s ease-in-out;
+    z-index: 55;
 }
 
 .popup-share.show, .popup-translate.show{
@@ -160,6 +162,7 @@ header i {
     transition: top 0s 0.2s ease-in-out,
                 opacity 0.2s 0s ease-in-out,
                 transform 0.2s 0s ease-in-out;
+    z-index: 55;
 }
 
 .email-interface.show {

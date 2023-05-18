@@ -44,6 +44,10 @@ closeSharePopup.onclick = () => {
 function openEmail() {
     emailInterface.classList.add("show");
     sharePopup.classList.remove("show");
+    if (userData.loggedIn) {
+        fromInput.value = userData.email;
+    }
+    
 }
 
 const enableSendBtn = () => {
@@ -56,7 +60,6 @@ const enableSendBtn = () => {
 
 function closeEmail() {
     // end tracker sharing option// 
-    taskCompleted('share');
     emailInterface.classList.remove("show");
     overlay.classList.remove("show");
     shareBtn.querySelector("i").classList.remove("selected");
@@ -72,9 +75,13 @@ sendBtn.addEventListener("click", closeEmail);
 //**TRANSLATE CONTRACT*/
 
 translateBtn.onclick = () => {
-    translatePopup.classList.toggle("show");
-    overlay.classList.toggle("show");
-    translateBtn.querySelector("i").classList.toggle("selected");
+    if (!userData.loggedIn) {
+        translatePopup.classList.toggle("show");
+        overlay.classList.toggle("show");
+        translateBtn.querySelector("i").classList.toggle("selected");
+    } else {
+        initializeView('./translated-contract.pdf');
+    }
 }
 
 closeTranslatePopup.onclick = () => {
@@ -84,8 +91,6 @@ closeTranslatePopup.onclick = () => {
 translateOptions.forEach(function(option) {
     option.addEventListener("click", function() {
         translateBtn.click();
-        // ending tracker for translating task //
-        taskCompleted('translate');
         // showing translated pdf// 
         initializeView('./translated-contract.pdf');
     })

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contract Anazlyzer HCI</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/contract_view.css">
     <link rel="stylesheet" href="styles/contract_actions.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -17,8 +18,28 @@
     <script src="https://kit.fontawesome.com/5dcecc602a.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="init()">
     <div class="overlay"></div>
+
+    <section class="login-popup">
+        <img class="start" onclick="startExperiment()" id="image"/>
+        <div class="login-popup-wrapper">
+            <header>Sign In</header>
+            <form>
+                <div class="field">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="username" placeholder="Username"/>
+                </div>
+                <div class="field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password"/>
+                </div>
+                <input class="signin-button" type="button" value="Sign In" id="signInBtn" disabled>
+            </form>
+            <button class="skip" onclick="closePopupWithoutSignIn()">Continue without logging in</button>
+        </div>
+    </section>
+
     <header class="step-indicator">
         <h2 class="step-title">Step 1: Contract Input Options</h2>
         <p class="step-description">Submit the contract for analysis by importing it using drag and drop,
@@ -63,7 +84,7 @@
                 </button>
                 <button class="translate-btn">
                     <i class="fa-solid fa-language"></i>
-                    <span>Translate</span>
+                    <span id="translate"></span>
                 </button>
                 <a href="contract.pdf" download id="download"> 
                     <button class="download-btn">
@@ -199,7 +220,7 @@
         </div>
     </section>   
 
-    
+    <script src="pages/login.js"></script>
     <script src="pages/input_page.js"></script>
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="pages/contract_view.js"></script>

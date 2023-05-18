@@ -66,6 +66,10 @@
     margin-top: 5px;
 }
 
+.contract-actions #translate {
+  max-width: 60px;
+}
+
 .contract-actions button i {
     background-color: #F2F4FA;
     color: #373ba0;

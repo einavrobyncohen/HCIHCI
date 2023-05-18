@@ -117,8 +117,6 @@ function contractInputNoSuccess() {
 }
 
 function toAnalyzeContract(){
-    // starting tracker // 
-    clickedOnButton();
     // intialize contract viewer // 
     initializeView('./contract.pdf');
     switchButton.style.display = 'none';
@@ -129,4 +127,9 @@ function toAnalyzeContract(){
     "Legal clauses in <span>orange</span> indicted moderately problematic legal clauses. <br>"+
     "Legal clauses in <span>green</span> indicate unproblematic legal clauses.</p>"
     conractViewArea.style.display = '';
+    if (userData.loggedIn) {
+        document.getElementById("translate").innerHTML = "Translate to my preffered Language";
+    } else {
+        document.getElementById("translate").innerHTML = "Translate";
+    }
 }

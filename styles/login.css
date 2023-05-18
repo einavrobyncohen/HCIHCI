@@ -1,0 +1,136 @@
+.login-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 300px;
+    width: 100%;
+    font-family: Figtree;
+    font-weight: 300;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    transition: top 0s 0.2s ease-in-out,
+                opacity 0.2s 0s ease-in-out,
+                transform 0.2s 0s ease-in-out;
+    z-index: 2222;
+}
+
+.login-popup.hide {
+    pointer-events: none;
+    opacity: 0;
+    top: -150%;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    transform: translate(-50%, -50%) scale(1.4);
+    transition: top 0s 0.2s ease-in-out,
+                opacity 0.2s 0s ease-in-out,
+                transform 0.2s 0s ease-in-out;
+
+}
+
+.login-popup-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-popup img {
+    width: 40px;
+    cursor: pointer;
+}
+
+img.pause {
+    width: 30px;
+}
+
+.login-popup img:hover {
+    scale: 1.2;
+}
+
+.login-popup header {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.login-popup .field {
+    background-color: #a5b9da2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0.9;
+
+}
+
+.login-popup form  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-popup .field input {
+    border: none;
+    outline: none;
+    background: none;
+    padding-inline-start: 0.7rem;
+    font-family: Figtree;
+    font-weight: 300;
+    font-size: 10px;
+    padding-inline-end: 25px;
+}
+
+.login-popup .field input::placeholder {
+    color: black;
+    
+}
+
+.login-popup .field i {
+    font-size: 10px;
+    color:  #373ba0;
+}
+
+.login-popup .signin-button {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 35px;
+    font-size: 10px;
+    font-family: Figtree;
+    background-color: #3ACB50;
+    color: white;
+    cursor: pointer;
+}
+
+.login-popup .signin-button:disabled { 
+    color: #656565;
+    background-color: #efefef;
+    cursor: not-allowed;
+}
+
+.login-popup .signin-button:hover {
+    opacity: 0.9;
+}
+
+.login-popup .skip {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 300;
+    text-decoration: underline;
+    color: #656565;
+    margin-top: 30px;
+    font-size: 10px;
+    font-family: Figtree;
+}
+
