@@ -128,7 +128,7 @@ function toAnalyzeContract(){
     "Legal clauses in <span>green</span> indicate unproblematic legal clauses.</p>"
     conractViewArea.style.display = '';
     if (userData.loggedIn) {
-        document.getElementById("translate").innerHTML = "Translate to my preffered Language";
+        document.getElementById("translate").innerHTML = "Translate to my preferred Language";
     } else {
         document.getElementById("translate").innerHTML = "Translate";
     }
